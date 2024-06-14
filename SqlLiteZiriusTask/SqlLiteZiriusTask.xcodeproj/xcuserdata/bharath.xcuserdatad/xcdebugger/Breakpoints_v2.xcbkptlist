@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "18574185-78DA-44DE-A2A9-DCDF00146A4E"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "20BE62A5-BD65-491A-BCC3-F3D8430E8483"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SqlLiteZiriusTask/UpdateViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
+            landmarkName = "ButtonSave(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "20BE62A5-BD65-491A-BCC3-F3D8430E8483 - 4308c00d386fa720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SqlLiteZiriusTask.UpdateViewController.ButtonSave(Any) -&gt; ()"
+                  moduleName = "SqlLiteZiriusTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/SqlLiteZiriusTask/SqlLiteZiriusTask/UpdateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "2988">
+               </Location>
+               <Location
+                  uuid = "20BE62A5-BD65-491A-BCC3-F3D8430E8483 - 4308c00d386fa720"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SqlLiteZiriusTask.UpdateViewController.ButtonSave(Any) -&gt; ()"
+                  moduleName = "SqlLiteZiriusTask"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/SqlLiteZiriusTask/SqlLiteZiriusTask/UpdateViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "58"
+                  endingLineNumber = "58"
+                  offsetFromSymbolStart = "2783">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6EAD03A-DEDE-4EA5-99D2-93DCACC90FBD"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SqlLiteZiriusTask/EditPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "68"
+            endingLineNumber = "68"
+            landmarkName = "didUpdateUser(updatedUser:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5251BB84-BFC4-4D51-BDD9-4DF401ADAEF1"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SqlLiteZiriusTask/EditPageViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "69"
+            endingLineNumber = "69"
+            landmarkName = "didUpdateUser(updatedUser:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

@@ -1,0 +1,414 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		8E2F588C2C099A9000F3CDD3 /* UpdateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2F588B2C099A9000F3CDD3 /* UpdateViewController.swift */; };
+		8E53B2FD2C006C3D00EF795F /* CollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53B2FC2C006C3D00EF795F /* CollectionViewController.swift */; };
+		8E53B2FF2C006DA700EF795F /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53B2FE2C006DA700EF795F /* Constants.swift */; };
+		8E53B3012C00941400EF795F /* AddUserSqlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E53B3002C00941400EF795F /* AddUserSqlViewController.swift */; };
+		8E9EE3102BFF1589004AC45E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EE30F2BFF1589004AC45E /* AppDelegate.swift */; };
+		8E9EE3122BFF1589004AC45E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EE3112BFF1589004AC45E /* SceneDelegate.swift */; };
+		8E9EE3142BFF1589004AC45E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EE3132BFF1589004AC45E /* ViewController.swift */; };
+		8E9EE3172BFF1589004AC45E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9EE3152BFF1589004AC45E /* Main.storyboard */; };
+		8E9EE31A2BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EE3182BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodeld */; };
+		8E9EE31C2BFF158B004AC45E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E9EE31B2BFF158B004AC45E /* Assets.xcassets */; };
+		8E9EE31F2BFF158B004AC45E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E9EE31D2BFF158B004AC45E /* LaunchScreen.storyboard */; };
+		8E9EE3292BFF21B0004AC45E /* noto-sans in Resources */ = {isa = PBXBuildFile; fileRef = 8E9EE3282BFF21B0004AC45E /* noto-sans */; };
+		8E9EE32B2BFF2399004AC45E /* source-sans-pro.regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8E9EE32A2BFF2399004AC45E /* source-sans-pro.regular.ttf */; };
+		8E9EE32D2BFF56A4004AC45E /* DBFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E9EE32C2BFF56A4004AC45E /* DBFile.swift */; };
+		8EB1E1B62C0602D700C48738 /* EditPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EB1E1B52C0602D700C48738 /* EditPageViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		8E2F588B2C099A9000F3CDD3 /* UpdateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateViewController.swift; sourceTree = "<group>"; };
+		8E53B2FC2C006C3D00EF795F /* CollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CollectionViewController.swift; sourceTree = "<group>"; };
+		8E53B2FE2C006DA700EF795F /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E53B3002C00941400EF795F /* AddUserSqlViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddUserSqlViewController.swift; sourceTree = "<group>"; };
+		8E9EE30C2BFF1589004AC45E /* SqlLiteZiriusTask.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SqlLiteZiriusTask.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9EE30F2BFF1589004AC45E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		8E9EE3112BFF1589004AC45E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		8E9EE3132BFF1589004AC45E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		8E9EE3162BFF1589004AC45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		8E9EE3192BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SqlLiteZiriusTask.xcdatamodel; sourceTree = "<group>"; };
+		8E9EE31B2BFF158B004AC45E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E9EE31E2BFF158B004AC45E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		8E9EE3202BFF158B004AC45E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E9EE3282BFF21B0004AC45E /* noto-sans */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "noto-sans"; sourceTree = "<group>"; };
+		8E9EE32A2BFF2399004AC45E /* source-sans-pro.regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "source-sans-pro.regular.ttf"; sourceTree = "<group>"; };
+		8E9EE32C2BFF56A4004AC45E /* DBFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBFile.swift; sourceTree = "<group>"; };
+		8EB1E1B52C0602D700C48738 /* EditPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditPageViewController.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8E9EE3092BFF1589004AC45E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E9EE3032BFF1589004AC45E = {
+			isa = PBXGroup;
+			children = (
+				8E9EE30E2BFF1589004AC45E /* SqlLiteZiriusTask */,
+				8E9EE30D2BFF1589004AC45E /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		8E9EE30D2BFF1589004AC45E /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E9EE30C2BFF1589004AC45E /* SqlLiteZiriusTask.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E9EE30E2BFF1589004AC45E /* SqlLiteZiriusTask */ = {
+			isa = PBXGroup;
+			children = (
+				8E9EE30F2BFF1589004AC45E /* AppDelegate.swift */,
+				8E9EE3112BFF1589004AC45E /* SceneDelegate.swift */,
+				8E9EE3132BFF1589004AC45E /* ViewController.swift */,
+				8E9EE32C2BFF56A4004AC45E /* DBFile.swift */,
+				8E53B3002C00941400EF795F /* AddUserSqlViewController.swift */,
+				8EB1E1B52C0602D700C48738 /* EditPageViewController.swift */,
+				8E53B2FC2C006C3D00EF795F /* CollectionViewController.swift */,
+				8E2F588B2C099A9000F3CDD3 /* UpdateViewController.swift */,
+				8E53B2FE2C006DA700EF795F /* Constants.swift */,
+				8E9EE3152BFF1589004AC45E /* Main.storyboard */,
+				8E9EE32A2BFF2399004AC45E /* source-sans-pro.regular.ttf */,
+				8E9EE3282BFF21B0004AC45E /* noto-sans */,
+				8E9EE31B2BFF158B004AC45E /* Assets.xcassets */,
+				8E9EE31D2BFF158B004AC45E /* LaunchScreen.storyboard */,
+				8E9EE3202BFF158B004AC45E /* Info.plist */,
+				8E9EE3182BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodeld */,
+			);
+			path = SqlLiteZiriusTask;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E9EE30B2BFF1589004AC45E /* SqlLiteZiriusTask */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E9EE3232BFF158C004AC45E /* Build configuration list for PBXNativeTarget "SqlLiteZiriusTask" */;
+			buildPhases = (
+				8E9EE3082BFF1589004AC45E /* Sources */,
+				8E9EE3092BFF1589004AC45E /* Frameworks */,
+				8E9EE30A2BFF1589004AC45E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SqlLiteZiriusTask;
+			productName = SqlLiteZiriusTask;
+			productReference = 8E9EE30C2BFF1589004AC45E /* SqlLiteZiriusTask.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E9EE3042BFF1589004AC45E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1430;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+					8E9EE30B2BFF1589004AC45E = {
+						CreatedOnToolsVersion = 14.3;
+					};
+				};
+			};
+			buildConfigurationList = 8E9EE3072BFF1589004AC45E /* Build configuration list for PBXProject "SqlLiteZiriusTask" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E9EE3032BFF1589004AC45E;
+			productRefGroup = 8E9EE30D2BFF1589004AC45E /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E9EE30B2BFF1589004AC45E /* SqlLiteZiriusTask */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E9EE30A2BFF1589004AC45E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E9EE31F2BFF158B004AC45E /* LaunchScreen.storyboard in Resources */,
+				8E9EE3292BFF21B0004AC45E /* noto-sans in Resources */,
+				8E9EE31C2BFF158B004AC45E /* Assets.xcassets in Resources */,
+				8E9EE3172BFF1589004AC45E /* Main.storyboard in Resources */,
+				8E9EE32B2BFF2399004AC45E /* source-sans-pro.regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E9EE3082BFF1589004AC45E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E53B3012C00941400EF795F /* AddUserSqlViewController.swift in Sources */,
+				8E53B2FD2C006C3D00EF795F /* CollectionViewController.swift in Sources */,
+				8E9EE3142BFF1589004AC45E /* ViewController.swift in Sources */,
+				8E9EE31A2BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodeld in Sources */,
+				8E9EE3102BFF1589004AC45E /* AppDelegate.swift in Sources */,
+				8E53B2FF2C006DA700EF795F /* Constants.swift in Sources */,
+				8EB1E1B62C0602D700C48738 /* EditPageViewController.swift in Sources */,
+				8E9EE32D2BFF56A4004AC45E /* DBFile.swift in Sources */,
+				8E9EE3122BFF1589004AC45E /* SceneDelegate.swift in Sources */,
+				8E2F588C2C099A9000F3CDD3 /* UpdateViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		8E9EE3152BFF1589004AC45E /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E9EE3162BFF1589004AC45E /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		8E9EE31D2BFF158B004AC45E /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E9EE31E2BFF158B004AC45E /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E9EE3212BFF158B004AC45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8E9EE3222BFF158B004AC45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E9EE3242BFF158C004AC45E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZTQC6B5S6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SqlLiteZiriusTask/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyFstApk.WorldCup.SqlLiteZiriusTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E9EE3252BFF158C004AC45E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = ZTQC6B5S6Z;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = SqlLiteZiriusTask/Info.plist;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.MyFstApk.WorldCup.SqlLiteZiriusTask;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E9EE3072BFF1589004AC45E /* Build configuration list for PBXProject "SqlLiteZiriusTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E9EE3212BFF158B004AC45E /* Debug */,
+				8E9EE3222BFF158B004AC45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E9EE3232BFF158C004AC45E /* Build configuration list for PBXNativeTarget "SqlLiteZiriusTask" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E9EE3242BFF158C004AC45E /* Debug */,
+				8E9EE3252BFF158C004AC45E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		8E9EE3182BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				8E9EE3192BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodel */,
+			);
+			currentVersion = 8E9EE3192BFF1589004AC45E /* SqlLiteZiriusTask.xcdatamodel */;
+			path = SqlLiteZiriusTask.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 8E9EE3042BFF1589004AC45E /* Project object */;
+}
