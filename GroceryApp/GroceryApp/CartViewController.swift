@@ -155,7 +155,19 @@ extension CartViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     @objc func decrementAction(sender:UIButton){
-   
+      //  if let tag = sender.imageView?.tag {
+          //  let indexp = IndexPath(row: tag, section: 0)
+           // let valueToUpdated = arrayOfDictionary[indexp.row]
+          //  print(tag)
+            
+       // }
+        
+//        if let cell = sender.superview?.superview as? UITableViewCell,
+//                 let indexPath = TableViewCart.indexPath(for: cell) {
+//                  let rowIndex = indexPath.row
+//                  print("Decrement button tapped at row: \(rowIndex)")
+//
+//              }
         
         let rowIndex = sender.imageView?.tag
         if var quantity = Int(arrayOfDictionary[rowIndex!]["quantity"] ?? "1"), quantity > 1 {
