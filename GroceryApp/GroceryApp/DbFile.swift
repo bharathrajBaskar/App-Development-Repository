@@ -234,6 +234,33 @@ class DataBaseFile{
         }
     }
     
-    
+    func fetchOrders() ->[[String:Any]]{
+        let selectQuery = """
+        SELECT id,date_of_order,total_price,no_of_products from orders ;
+"""
+        var localPointer:OpaquePointer?
+        var orders:[[String:Any]] = []
+        if sqlite3_prepare_v2(MainDataPointer, selectQuery, -1, &localPointer, nil) == SQLITE_OK{
+            while sqlite3_step(localPointer) == SQLITE_ROW{
+                let id  = sqlite3_column_int(localPointer, 0)
+                if let dateString = sqlite3_column_text(localPointer, 1){
+                    let date = String(cString: dateString)
+                    let totalPrice = sqlite3_column_double(localPointer, 2)
+                    let noOfProducts = sqlite3_column_int(localPointer, 3)
+                    let order : [String:Any] = [
+                        "id":Int(id),"date_of_order":date,"total_price":totalPrice,"no_of_products":noOfProducts
+                    
+                    ]
+                    orders.append(order)
+                }
+            }
+        }
+        else{
+            let errorMessage = String(cString: sqlite3_errmsg(MainDataPointer)!)
+                    print("Failed to prepare fetch orders statement: \(errorMessage)")
+        }
+        sqlite3_finalize(localPointer)
+        return orders
+    }
 
 }
