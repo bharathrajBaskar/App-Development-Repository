@@ -262,5 +262,76 @@ class DataBaseFile{
         sqlite3_finalize(localPointer)
         return orders
     }
+    
+    
+    func selectOrderItems(orderId:Int ) -> [[String:Any]]
+    {
 
+        let selectQuery = """
+          SELECT order_id, product_name, quantity, imagePath, product_price, total FROM order_item WHERE order_id = ?;
+          """
+          var localPointer: OpaquePointer?
+          var orderItems: [[String: Any]] = []
+
+          if sqlite3_prepare_v2(MainDataPointer, selectQuery, -1, &localPointer, nil) == SQLITE_OK {
+              sqlite3_bind_int(localPointer, 1, Int32(orderId))
+
+              while sqlite3_step(localPointer) == SQLITE_ROW {
+                  let orderId = sqlite3_column_int(localPointer, 0)
+                  let productNameCStr = sqlite3_column_text(localPointer, 1)
+                  let quantity = sqlite3_column_int(localPointer, 2)
+                  let imagePathCStr = sqlite3_column_text(localPointer, 3)
+                  let productPrice = sqlite3_column_double(localPointer, 4)
+                  let totalPrice = sqlite3_column_double(localPointer, 5)
+                  
+                  if let productNameCStr = productNameCStr, let imagePathCStr = imagePathCStr {
+                      let productName = String(cString: productNameCStr)
+                      let imagePath = String(cString: imagePathCStr)
+
+                      let orderItem: [String: Any] = [
+                          "orderId": Int(orderId),
+                          "productName": productName,
+                          "quantity": Int(quantity),
+                          "imagePath": imagePath,
+                          "productPrice": productPrice,
+                          "totalPrice": totalPrice
+                      ]
+                      orderItems.append(orderItem)
+                  }
+              }
+          } else {
+              let errorMessage = String(cString: sqlite3_errmsg(MainDataPointer)!)
+              print("Failed to prepare fetch orders statement: \(errorMessage)")
+          }
+          sqlite3_finalize(localPointer)
+          return orderItems
+    }
+    func AggregateTotalFunc(orderId:Int)->Double{
+        let query = "Select sum(total) from order_item where order_id = ? "
+        var localPointer:OpaquePointer?
+        var totalSum : Double = 0.0
+        if sqlite3_prepare_v2(MainDataPointer, query, -1, &localPointer, nil) == SQLITE_OK
+        {
+           // sqlite3_column_int(localPointer, Int32(orderId))
+            sqlite3_bind_int(localPointer, 1, Int32(orderId))
+            if sqlite3_step(localPointer) == SQLITE_ROW {
+                totalSum = sqlite3_column_double(localPointer, 0)
+                
+            }
+            else{
+                let errorMessage = String(cString: sqlite3_errmsg(MainDataPointer)!)
+                            print("Failed to calculate sum: \(errorMessage)")
+            }
+            
+        }
+        else {
+                let errorMessage = String(cString: sqlite3_errmsg(MainDataPointer)!)
+                print("Failed to prepare query: \(errorMessage)")
+            }
+            
+            sqlite3_finalize(localPointer)
+            return totalSum
+   
+    }
+    
 }

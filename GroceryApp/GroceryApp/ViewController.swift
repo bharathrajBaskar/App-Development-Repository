@@ -35,11 +35,12 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var arrayOfDictionaryApi:[[String:String]] = []
     var detailModel = [ProductModel]()
     var tempModel = [ProductModel]()
+    
     override func viewDidLoad() {
      
         super.viewDidLoad()
         TextFieldSearch.delegate = self
-        apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+        
         arrData = ["Home","Cart","Language","Logout"]
         arr = [UIImage(named: "Home")!,UIImage(named: "Cart")!,UIImage(named: "Tamil")!,UIImage(named: "Logout")!]
                
@@ -74,6 +75,9 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+    }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let searchFieldText = TextFieldSearch.text as NSString? else{return true}
         let updatedText = searchFieldText.replacingCharacters(in: range, with: string)

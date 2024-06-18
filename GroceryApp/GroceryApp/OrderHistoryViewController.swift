@@ -49,7 +49,7 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
 //        rupeeLabel.text = order["total_price"]
 //        noOfItem.text = order["no_of_products"]
         
-        
+        cell.selectionStyle = .none
         orderLabel.text =  "Order \(String(describing: order["id"] ?? ""))"
                 dateLabel.text = String(describing: order["date_of_order"] ?? "")
                 rupeeLabel.text = "₹ \(String(describing: order["total_price"] ?? ""))"
@@ -58,6 +58,7 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
         
         
 
+        
     }
     
     
@@ -65,5 +66,12 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
         return 100.0
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "OrderHistoryDetailPageViewController") as! OrderHistoryDetailPageViewController
+        let order = arrayOfOrders[indexPath.row]
+        vc.orderId = String(describing: order["id"] ?? "")
+        vc.modalPresentationStyle = .fullScreen
+        self.present(vc, animated: false)
+    }
     
 }

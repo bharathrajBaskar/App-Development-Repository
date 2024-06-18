@@ -13,6 +13,7 @@
 		8EA1EA852C12FC280064A904 /* DbFile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EA1EA842C12FC280064A904 /* DbFile.swift */; };
 		8ED264FE2C172D47008B119B /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8ED264FD2C172D47008B119B /* CartViewController.swift */; };
 		8EDB0C762C0F17B500992998 /* Msd.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8EDB0C752C0F17B500992998 /* Msd.jpg */; };
+		8EDB3A182C2150AF00FF98CE /* OrderHistoryDetailPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB3A172C2150AF00FF98CE /* OrderHistoryDetailPageViewController.swift */; };
 		8EDB8D942C0D854700EA6CAD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB8D932C0D854700EA6CAD /* AppDelegate.swift */; };
 		8EDB8D962C0D854700EA6CAD /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB8D952C0D854700EA6CAD /* SceneDelegate.swift */; };
 		8EDB8D982C0D854700EA6CAD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EDB8D972C0D854700EA6CAD /* ViewController.swift */; };
@@ -34,6 +35,7 @@
 		8EA1EA842C12FC280064A904 /* DbFile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DbFile.swift; sourceTree = "<group>"; };
 		8ED264FD2C172D47008B119B /* CartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		8EDB0C752C0F17B500992998 /* Msd.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Msd.jpg; sourceTree = "<group>"; };
+		8EDB3A172C2150AF00FF98CE /* OrderHistoryDetailPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrderHistoryDetailPageViewController.swift; sourceTree = "<group>"; };
 		8EDB8D902C0D854700EA6CAD /* GroceryApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GroceryApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8EDB8D932C0D854700EA6CAD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8EDB8D952C0D854700EA6CAD /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,6 +125,7 @@
 				8E9BC5E52C11B48D009087D7 /* DetailPageViewController.swift */,
 				8EDB8D972C0D854700EA6CAD /* ViewController.swift */,
 				8EF7E0C82C1ADF9F002E9DCC /* constants.swift */,
+				8EDB3A172C2150AF00FF98CE /* OrderHistoryDetailPageViewController.swift */,
 				8EA1EA842C12FC280064A904 /* DbFile.swift */,
 				8E3BB2BB2C0F43030080CA64 /* Modal */,
 				8EDB0C742C0F179E00992998 /* Image Resources */,
@@ -252,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E9BC5E62C11B48D009087D7 /* DetailPageViewController.swift in Sources */,
+				8EDB3A182C2150AF00FF98CE /* OrderHistoryDetailPageViewController.swift in Sources */,
 				8EDB8D982C0D854700EA6CAD /* ViewController.swift in Sources */,
 				8E9C41042C1C5CB600DCBDB8 /* OrderHistoryViewController.swift in Sources */,
 				8EF7E0C92C1ADF9F002E9DCC /* constants.swift in Sources */,
