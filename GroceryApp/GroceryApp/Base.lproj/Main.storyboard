@@ -1006,30 +1006,39 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0n2-H8-QGj">
-                                                <rect key="frame" x="20" y="525" width="353" height="20.333333333333371"/>
+                                                <rect key="frame" x="20" y="554" width="353" height="20.333333333333371"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tR-mr-pnN">
+                                                <rect key="frame" x="20" y="513" width="353" height="21"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="7tR-mr-pnN" secondAttribute="trailing" constant="20" id="2X0-sC-szM"/>
                                             <constraint firstItem="J0x-bF-Ixl" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" constant="120" id="3qV-RX-KZr"/>
                                             <constraint firstItem="J0x-bF-Ixl" firstAttribute="top" secondItem="5Jb-3R-IL3" secondAttribute="bottom" constant="30" id="5pc-OA-1jX"/>
                                             <constraint firstItem="vQF-rw-uS6" firstAttribute="top" secondItem="L3A-wP-QnV" secondAttribute="top" id="6wy-Nn-yrG"/>
                                             <constraint firstAttribute="trailing" secondItem="dZy-6O-8Nu" secondAttribute="trailing" constant="10" id="8sU-h2-5ux"/>
                                             <constraint firstAttribute="bottom" secondItem="KaD-hQ-LyC" secondAttribute="bottom" constant="55" id="9bI-S1-9Kp"/>
                                             <constraint firstItem="vQF-rw-uS6" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" id="JGD-nG-BUf"/>
+                                            <constraint firstItem="0n2-H8-QGj" firstAttribute="top" secondItem="7tR-mr-pnN" secondAttribute="bottom" constant="20" id="JWd-D1-6We"/>
                                             <constraint firstAttribute="trailing" secondItem="5Jb-3R-IL3" secondAttribute="trailing" constant="20" id="KPL-0t-zHP"/>
+                                            <constraint firstItem="7tR-mr-pnN" firstAttribute="top" secondItem="5Jb-3R-IL3" secondAttribute="bottom" constant="101" id="TVk-7R-y1l"/>
                                             <constraint firstAttribute="height" constant="852" id="W4p-wk-nkz"/>
                                             <constraint firstItem="dZy-6O-8Nu" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" constant="10" id="Xws-c4-gDY"/>
                                             <constraint firstItem="KaD-hQ-LyC" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" constant="40" id="YV4-CK-rlr"/>
                                             <constraint firstItem="Pwk-0a-jxl" firstAttribute="top" secondItem="5Jb-3R-IL3" secondAttribute="bottom" constant="30" id="Yh8-MO-2ED"/>
                                             <constraint firstItem="5Jb-3R-IL3" firstAttribute="top" secondItem="dZy-6O-8Nu" secondAttribute="bottom" constant="30" id="Yh8-fD-qRr"/>
+                                            <constraint firstItem="7tR-mr-pnN" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" constant="20" id="Yhy-VA-O0s"/>
                                             <constraint firstItem="Pwk-0a-jxl" firstAttribute="leading" secondItem="vlK-hs-yGp" secondAttribute="trailing" constant="29" id="bJK-Ve-AIn"/>
                                             <constraint firstItem="vlK-hs-yGp" firstAttribute="leading" secondItem="J0x-bF-Ixl" secondAttribute="trailing" constant="15" id="dSt-3V-vFZ"/>
                                             <constraint firstAttribute="trailing" secondItem="vQF-rw-uS6" secondAttribute="trailing" id="lgF-JB-ras"/>
-                                            <constraint firstItem="0n2-H8-QGj" firstAttribute="top" secondItem="5Jb-3R-IL3" secondAttribute="bottom" constant="113" id="lvO-IY-Xrt"/>
                                             <constraint firstItem="vlK-hs-yGp" firstAttribute="top" secondItem="5Jb-3R-IL3" secondAttribute="bottom" constant="37" id="m06-Bf-SXb"/>
                                             <constraint firstAttribute="trailing" secondItem="KaD-hQ-LyC" secondAttribute="trailing" constant="40" id="mre-1B-Q1Y"/>
                                             <constraint firstItem="5Jb-3R-IL3" firstAttribute="leading" secondItem="L3A-wP-QnV" secondAttribute="leading" constant="20" id="pUr-8f-8nJ"/>
@@ -1061,6 +1070,7 @@
                         <outlet property="CollectionViewProduct" destination="6nf-DD-HBq" id="NrY-av-Oit"/>
                         <outlet property="LabelDescription" destination="0n2-H8-QGj" id="Vul-FD-Yxe"/>
                         <outlet property="LabelNameProduct" destination="5Jb-3R-IL3" id="Ic0-vS-GAY"/>
+                        <outlet property="LabelPrice" destination="7tR-mr-pnN" id="ZfM-e6-PKE"/>
                         <outlet property="LabelQuantity" destination="vlK-hs-yGp" id="gt7-sS-fNq"/>
                         <outlet property="LabelproductName" destination="StT-3n-nFN" id="obx-NT-4ri"/>
                         <outlet property="ProductImagePageControl" destination="FiO-7V-E2Z" id="36d-sp-KBv"/>

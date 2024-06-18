@@ -9,6 +9,7 @@ import UIKit
 
 class DetailPageViewController: UIViewController {
 
+    @IBOutlet weak var LabelPrice: UILabel!
     @IBOutlet weak var LabelNameProduct: UILabel!
     @IBOutlet weak var ProductImagePageControl: UIPageControl!
     @IBOutlet weak var LabelQuantity: UILabel!
@@ -42,9 +43,17 @@ class DetailPageViewController: UIViewController {
     }
     func setDetails(){
         LabelproductName.text = wholeArr?.name
-        LabelDescription.text = wholeArr?.description
+        
+      //  LabelDescription.text = wholeArr?.description
         self.imageArr = (wholeArr?.image)! 
         self.LabelNameProduct.text = wholeArr?.name
+        if let price = wholeArr?.price_per_kg{
+            self.LabelPrice.text = "Price : \(price)"
+        }
+        
+        if let description = wholeArr?.description{
+            self.LabelDescription.text = "Description : \(description)"
+        }
         if imageArr.count == 1{
             ProductImagePageControl.isHidden = true
         }

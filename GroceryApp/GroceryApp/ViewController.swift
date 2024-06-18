@@ -226,8 +226,6 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
             cell1.addSubview(ProfilePic)
 //            NameLabel.text = self.profName
 //            cell1.addSubview(NameLabel)
-            
-            
             return cell1
         }
         
