@@ -614,6 +614,7 @@
                                 </prototypes>
                             </tableView>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Xt-et-gaM"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Myq-TG-6dx" firstAttribute="top" secondItem="K5I-fs-Eft" secondAttribute="bottom" id="AWA-ek-AYB"/>
@@ -626,6 +627,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="OrderNo" destination="doQ-LS-wvD" id="mWE-eW-QCv"/>
                         <outlet property="TableViewOrderItems" destination="Myq-TG-6dx" id="uXa-OL-t3p"/>
                     </connections>
                 </viewController>
@@ -698,7 +700,7 @@
                                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="2Lo-ic-ts0">
                                                 <rect key="frame" x="0.0" y="0.0" width="393" height="719"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                                <collectionViewFlowLayout key="collectionViewLayout" automaticEstimatedItemSize="YES" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yuL-17-107">
+                                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yuL-17-107">
                                                     <size key="itemSize" width="183" height="177"/>
                                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -715,15 +717,20 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="100" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6ZP-PL-jxt">
                                                                     <rect key="frame" x="0.0" y="0.0" width="183" height="147"/>
                                                                     <constraints>
-                                                                        <constraint firstAttribute="width" constant="183" id="EDT-7H-YwN"/>
                                                                         <constraint firstAttribute="height" constant="147" id="Ijl-Al-0hA"/>
                                                                     </constraints>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </imageView>
                                                                 <label opaque="NO" userInteractionEnabled="NO" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Fb-hc-eSf">
                                                                     <rect key="frame" x="2" y="149" width="179" height="26"/>
                                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                                     <nil key="textColor"/>
                                                                     <nil key="highlightedColor"/>
+                                                                    <userDefinedRuntimeAttributes>
+                                                                        <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                                    </userDefinedRuntimeAttributes>
                                                                 </label>
                                                             </subviews>
                                                             <constraints>
@@ -736,10 +743,21 @@
                                                                 <constraint firstItem="0Fb-hc-eSf" firstAttribute="top" secondItem="6ZP-PL-jxt" secondAttribute="bottom" constant="2" id="YvC-LH-5nE"/>
                                                                 <constraint firstAttribute="trailing" secondItem="6ZP-PL-jxt" secondAttribute="trailing" id="mf9-TK-Xev"/>
                                                             </constraints>
+                                                            <userDefinedRuntimeAttributes>
+                                                                <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                            </userDefinedRuntimeAttributes>
                                                         </collectionViewCellContentView>
                                                         <size key="customSize" width="183" height="177"/>
+                                                        <userDefinedRuntimeAttributes>
+                                                            <userDefinedRuntimeAttribute type="boolean" keyPath="isSkeletonable" value="YES"/>
+                                                        </userDefinedRuntimeAttributes>
                                                     </collectionViewCell>
                                                 </cells>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="skeletonCornerRadius">
+                                                        <real key="value" value="0.0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
                                             </collectionView>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>

@@ -6,7 +6,8 @@
 //
 
 import UIKit
- import SDWebImage
+import SDWebImage
+import SkeletonView
 class ViewController: UIViewController,UITextFieldDelegate {
 
     @IBOutlet weak var ViewHiddenInitial: UIView!
@@ -73,10 +74,27 @@ class ViewController: UIViewController,UITextFieldDelegate {
 //        self.downloadImage(from: URL(string: "https://fastly.picsum.photos/id/851/200/300.jpg?hmac=AD_d7PsSrqI2zi-ubHY_-urUxCN77Gnev3k5o0P6nlE")!)
 //        self.downloadImage(from: URL(string: "https://www.researchgate.net/publication/337976820/figure/fig7/AS:1086081361543213@1635953383440/Sample-tomato-images-a-c-Healthy-tomato-d-and-e-Tomato-malformed-fruit-f-Tomato.jpg")!)
         
+        
+     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+    //    apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+        self.CollectionViewmain.isSkeletonable = true
+        self.CollectionViewmain.skeletonCornerRadius = 10.0
+        
+        self.CollectionViewmain.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .lightGray.withAlphaComponent(0.6)), animation: nil, transition: .crossDissolve(0.25))
+       // self.CollectionViewmain.showAnimatedSkeleton(usingColor: .concrete, transition: .crossDissolve(0.25))
+        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+            self.apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+            //self.CollectionViewmain.reloadData()
+            self.CollectionViewmain.stopSkeletonAnimation()
+            
+           self.CollectionViewmain.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+            self.CollectionViewmain.reloadData()
+        })
+       
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let searchFieldText = TextFieldSearch.text as NSString? else{return true}
@@ -131,7 +149,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     print("Response Model",responseModel)
                     self.detailModel = responseModel
                     self.tempModel = responseModel
-                   
+                    DispatchQueue.main.async {
+                        self.CollectionViewmain.reloadData()
+                    }
+                    
                 }
                 catch (let err){
                     print("error",err)
@@ -256,11 +277,19 @@ extension ViewController : UITableViewDelegate,UITableViewDataSource{
 
 }
 
-extension ViewController :UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return "CellMain"
+    }
+    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 10
+    }
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return detailModel.count
     }
-
+//
+    
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = CollectionViewmain.dequeueReusableCell(withReuseIdentifier: "CellMain", for: indexPath)
@@ -284,29 +313,21 @@ extension ViewController :UICollectionViewDelegate,UICollectionViewDataSource,UI
     }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-
-        
         //return CGSize(width: self.view.frame.width / 2, height: .frame.height)
-        return CGSize(width: collectionView.frame.width/2.5, height: collectionView.frame.height/2.0)
+        return CGSize(width: (UIScreen.main.bounds.size.width/2) - 20, height: 180.0)
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailPageViewController") as! DetailPageViewController
-        
-        
 
         let selectedProduct = detailModel[indexPath.item]
         print("Product : ", selectedProduct)
-
         vc.wholeArr = selectedProduct
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
-        
 
-        
         //        present(vc,animated: true)
-        
-        
+
         
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 class OrderHistoryDetailPageViewController: UIViewController {
     var orderId:String?
     @IBOutlet weak var TableViewOrderItems: UITableView!
+    @IBOutlet weak var OrderNo: UILabel!
     var arrayOfOrderItems :[[String:Any]] = []
     var totalPrice = 0.0
     override func viewDidLoad() {
@@ -20,7 +21,10 @@ class OrderHistoryDetailPageViewController: UIViewController {
         TableViewOrderItems.delegate = self
         TableViewOrderItems.dataSource = self
         totalPrice = dbObject.AggregateTotalFunc(orderId: stringToInt!)
-       
+        if let orderNo = stringToInt{
+            OrderNo.text = "OrderNo  \(orderNo)"
+        }
+        
     }
     
 

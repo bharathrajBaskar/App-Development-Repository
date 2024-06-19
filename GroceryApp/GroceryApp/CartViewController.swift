@@ -121,7 +121,11 @@ extension CartViewController:UITableViewDelegate,UITableViewDataSource{
         let arr = arrayOfDictionary[indexPath.row]
         cell.selectionStyle = .none
         productNameLabel.text = arr["name"]
-        productPriceLabel.text = arr["price_per_kg"]
+       if let pricePerkg = arr["price_per_kg"]
+        { productPriceLabel.text =  "₹\(pricePerkg) "
+           
+       }
+       
         productQuabtityLabel.text = arr["quantity"]
         let imageStr = arr["image"]
         

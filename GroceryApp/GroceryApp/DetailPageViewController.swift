@@ -48,7 +48,7 @@ class DetailPageViewController: UIViewController {
         self.imageArr = (wholeArr?.image)! 
         self.LabelNameProduct.text = wholeArr?.name
         if let price = wholeArr?.price_per_kg{
-            self.LabelPrice.text = "Price : \(price)"
+            self.LabelPrice.text = "Price : ₹\(price)"
         }
         
         if let description = wholeArr?.description{

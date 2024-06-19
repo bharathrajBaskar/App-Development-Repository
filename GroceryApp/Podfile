@@ -8,6 +8,6 @@ target 'GroceryApp' do
   # Pods for GroceryApp
 pod 'CBFlashyTabBarController'
 pod 'SDWebImage'
-
+pod 'SkeletonView'
 
 end

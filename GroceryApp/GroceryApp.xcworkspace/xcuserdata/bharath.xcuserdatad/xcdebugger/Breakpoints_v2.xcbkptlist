@@ -14,8 +14,8 @@
             filePath = "GroceryApp/OrderHistoryDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "18"
-            endingLineNumber = "18"
+            startingLineNumber = "19"
+            endingLineNumber = "19"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -49,6 +49,36 @@
                   endingLineNumber = "18"
                   offsetFromSymbolStart = "312">
                </Location>
+               <Location
+                  uuid = "FB6DD87C-1AF1-4A76-80FD-91BDBCEB4EB0 - f8288c68933a09ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "396">
+               </Location>
+               <Location
+                  uuid = "FB6DD87C-1AF1-4A76-80FD-91BDBCEB4EB0 - f8288c68933a09ea"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "365">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -62,8 +92,8 @@
             filePath = "GroceryApp/OrderHistoryDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "16"
-            endingLineNumber = "16"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
             landmarkName = "viewDidLoad()"
             landmarkType = "7">
             <Locations>
@@ -97,6 +127,36 @@
                   endingLineNumber = "16"
                   offsetFromSymbolStart = "37">
                </Location>
+               <Location
+                  uuid = "33D7FD81-B4D2-46B8-80CF-92676AD3221F - f8288c68933a09ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "132">
+               </Location>
+               <Location
+                  uuid = "33D7FD81-B4D2-46B8-80CF-92676AD3221F - f8288c68933a09ac"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.viewDidLoad() -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "72">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -110,8 +170,8 @@
             filePath = "GroceryApp/OrderHistoryDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "53"
-            endingLineNumber = "53"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
             <Locations>
@@ -160,6 +220,96 @@
                   endingLineNumber = "53"
                   offsetFromSymbolStart = "3516">
                </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2740">
+               </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2972">
+               </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "3240">
+               </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "2888">
+               </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "3191">
+               </Location>
+               <Location
+                  uuid = "4906E55F-E8D4-4184-B9DF-D1930D9BB9E1 - 1759b6f72062d500"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "57"
+                  endingLineNumber = "57"
+                  offsetFromSymbolStart = "3516">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -173,10 +323,57 @@
             filePath = "GroceryApp/OrderHistoryDetailPageViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "72"
-            endingLineNumber = "72"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6B27D93C-2B1F-4850-898B-C0CE61E8AE19 - 1759b6f72062d711"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "72"
+                  endingLineNumber = "72"
+                  offsetFromSymbolStart = "6545">
+               </Location>
+               <Location
+                  uuid = "6B27D93C-2B1F-4850-898B-C0CE61E8AE19 - 1759b6f72062d695"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "5696">
+               </Location>
+               <Location
+                  uuid = "6B27D93C-2B1F-4850-898B-C0CE61E8AE19 - 1759b6f72062d695"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.OrderHistoryDetailPageViewController.tableView(_: __C.UITableView, cellForRowAt: Foundation.IndexPath) -&gt; __C.UITableViewCell"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/OrderHistoryDetailPageViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "76"
+                  endingLineNumber = "76"
+                  offsetFromSymbolStart = "6545">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -189,10 +386,88 @@
             filePath = "GroceryApp/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "79"
-            endingLineNumber = "79"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
             landmarkName = "viewWillAppear(_:)"
             landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "188E38C5-6507-41C0-A608-30E75BDE32E3"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroceryApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "collectionView(_:layout:sizeForItemAt:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "188E38C5-6507-41C0-A608-30E75BDE32E3 - 20abf31fef19cd3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.ViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290"
+                  offsetFromSymbolStart = "52">
+               </Location>
+               <Location
+                  uuid = "188E38C5-6507-41C0-A608-30E75BDE32E3 - 20abf31fef19cd3c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.ViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "290"
+                  endingLineNumber = "290"
+                  offsetFromSymbolStart = "48">
+               </Location>
+               <Location
+                  uuid = "188E38C5-6507-41C0-A608-30E75BDE32E3 - 20abf31fef19ce27"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.ViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "297"
+                  endingLineNumber = "297"
+                  offsetFromSymbolStart = "60">
+               </Location>
+               <Location
+                  uuid = "188E38C5-6507-41C0-A608-30E75BDE32E3 - 20abf31fef19ce04"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.ViewController.collectionView(_: __C.UICollectionView, layout: __C.UICollectionViewLayout, sizeForItemAt: Foundation.IndexPath) -&gt; __C.CGSize"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "298"
+                  endingLineNumber = "298"
+                  offsetFromSymbolStart = "60">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>
