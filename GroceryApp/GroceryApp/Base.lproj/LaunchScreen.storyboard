@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,8 +15,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Splash" translatesAutoresizingMaskIntoConstraints="NO" id="GsU-G6-dg5">
+                                <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grozery App " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d6J-AP-qjV">
+                                <rect key="frame" x="106.00000000000001" y="408" width="181.33333333333337" height="36"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="d6J-AP-qjV" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="Dh2-hu-4tB"/>
+                            <constraint firstAttribute="trailing" secondItem="GsU-G6-dg5" secondAttribute="trailing" id="LQo-pM-B3P"/>
+                            <constraint firstItem="GsU-G6-dg5" firstAttribute="leading" secondItem="Ze5-6b-2t3" secondAttribute="leading" id="Rj9-kj-JFa"/>
+                            <constraint firstItem="d6J-AP-qjV" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="SW3-b3-cfy"/>
+                            <constraint firstItem="GsU-G6-dg5" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="f0c-3A-cyL"/>
+                            <constraint firstAttribute="bottom" secondItem="GsU-G6-dg5" secondAttribute="bottom" id="uIN-Ym-WQ4"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -26,6 +43,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Splash" width="640" height="1136"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

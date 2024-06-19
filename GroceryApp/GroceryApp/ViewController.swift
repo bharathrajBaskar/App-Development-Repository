@@ -22,7 +22,8 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBOutlet weak var MainView: UIView!
     @IBOutlet weak var TableViewHidden: UIView!
     
-
+    let spacing:CGFloat = 16.0
+    @IBOutlet weak var LabelTitle: UILabel!
     var arrData:[String] = []
     var arr:[UIImage]! = []
     var LabelMenu:UILabel!
@@ -49,7 +50,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         TableView = UITableView(frame:CGRect(x: 0, y: 0, width: 0, height: self.view.bounds.height) )
         self.view.addSubview(sideBar)
         
-               
+        TextFieldSearch.returnKeyType = .done
         CollectionViewmain.dataSource = self
         CollectionViewmain.delegate = self
         TableView.dataSource = self
@@ -73,27 +74,28 @@ class ViewController: UIViewController,UITextFieldDelegate {
 //
 //        self.downloadImage(from: URL(string: "https://fastly.picsum.photos/id/851/200/300.jpg?hmac=AD_d7PsSrqI2zi-ubHY_-urUxCN77Gnev3k5o0P6nlE")!)
 //        self.downloadImage(from: URL(string: "https://www.researchgate.net/publication/337976820/figure/fig7/AS:1086081361543213@1635953383440/Sample-tomato-images-a-c-Healthy-tomato-d-and-e-Tomato-malformed-fruit-f-Tomato.jpg")!)
-        
-        
-     
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-    //    apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
         self.CollectionViewmain.isSkeletonable = true
         self.CollectionViewmain.skeletonCornerRadius = 10.0
         
         self.CollectionViewmain.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .lightGray.withAlphaComponent(0.6)), animation: nil, transition: .crossDissolve(0.25))
-       // self.CollectionViewmain.showAnimatedSkeleton(usingColor: .concrete, transition: .crossDissolve(0.25))
-        DispatchQueue.main.asyncAfter(deadline: .now() + 5, execute: {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
             self.apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
             //self.CollectionViewmain.reloadData()
-            self.CollectionViewmain.stopSkeletonAnimation()
-            
-           self.CollectionViewmain.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
-            self.CollectionViewmain.reloadData()
+          
         })
+     
+        
+    }
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        TextFieldSearch.resignFirstResponder()
+        return true
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+  //    apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+       
+       // self.CollectionViewmain.showAnimatedSkeleton(usingColor: .concrete, transition: .crossDissolve(0.25))
+   
        
     }
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
@@ -150,6 +152,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     self.detailModel = responseModel
                     self.tempModel = responseModel
                     DispatchQueue.main.async {
+                        self.CollectionViewmain.stopSkeletonAnimation()
+                        
+                       self.CollectionViewmain.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
+                        self.CollectionViewmain.reloadData()
                         self.CollectionViewmain.reloadData()
                     }
                     
@@ -204,6 +210,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
             print("ViewShownInitial",ViewShownInitial.isHidden)
             print("ViewHiddenInitial",ViewHiddenInitial.isHidden)
             TableViewHidden.isHidden = false
+            TextFieldSearch.becomeFirstResponder()
             print("ViewHiddenInitial",ViewHiddenInitial.isHidden)
 
       }
@@ -213,11 +220,15 @@ class ViewController: UIViewController,UITextFieldDelegate {
     
     
     @IBAction func BackButton(_ sender: Any) {
-
+        TextFieldSearch.text?.removeAll()
+       detailModel = tempModel
+        CollectionViewmain.reloadData()
+        TextFieldSearch.resignFirstResponder()
             if !initialBool{
 //                    MainView.isHidden = false
 //                    TableViewHidden.isHidden = true
                 TableViewHidden.isHidden = true
+                
                 }
            
                 initialBool.toggle()
@@ -282,6 +293,7 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
         return "CellMain"
     }
     
+    
     func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -314,8 +326,28 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //return CGSize(width: self.view.frame.width / 2, height: .frame.height)
-        return CGSize(width: (UIScreen.main.bounds.size.width/2) - 20, height: 180.0)
+        return CGSize(width: (UIScreen.main.bounds.size.width/2) - 10, height: 180.0)
+
     }
+//    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+//        return 10
+//    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 0, left: 7, bottom: 0, right:  7)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 2
+    }
+    
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+//
+//        return 4
+//    }
+//
+//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
+//
+//        return 1
+//    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailPageViewController") as! DetailPageViewController

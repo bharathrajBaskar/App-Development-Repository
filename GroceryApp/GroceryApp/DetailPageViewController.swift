@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import SkeletonView
 
 class DetailPageViewController: UIViewController {
 
+    @IBOutlet weak var ButtonIncrement: UIButton!
+    @IBOutlet weak var ButtonDecrement: UIButton!
+    @IBOutlet weak var ButtonAddToCart: UIButton!
     @IBOutlet weak var LabelPrice: UILabel!
     @IBOutlet weak var LabelNameProduct: UILabel!
     @IBOutlet weak var ProductImagePageControl: UIPageControl!
@@ -28,12 +32,33 @@ class DetailPageViewController: UIViewController {
         CollectionViewProduct.isPagingEnabled = true
       // UserDefaults.standard.removeObject(forKey: "cartItem")
         print("ArrayImage ",wholeArr!.image!)
-       setDetails()
+     
         if let layout = CollectionViewProduct.collectionViewLayout as? UICollectionViewFlowLayout {
                 layout.scrollDirection = .horizontal
             }
-    
-        LabelQuantity.text = String(01)
+        
+        self.LabelPrice.isSkeletonable = true
+        self.LabelDescription.isSkeletonable = true
+        self.LabelNameProduct.isSkeletonable = true
+        self.CollectionViewProduct.isSkeletonable = true
+        self.LabelQuantity.isSkeletonable = true
+        self.ButtonDecrement.isSkeletonable = true
+        self.ButtonIncrement.isSkeletonable = true
+        self.ButtonAddToCart.isSkeletonable = true
+        self.LabelPrice.showSkeleton()
+        self.LabelDescription.showSkeleton()
+        self.LabelNameProduct.showSkeleton()
+        self.ButtonAddToCart.showSkeleton()
+       // self.CollectionViewProduct.showSkeleton()
+        self.CollectionViewProduct.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .lightGray.withAlphaComponent(0.6)), animation: nil, transition: .crossDissolve(0.25))
+        self.LabelQuantity.showSkeleton()
+        self.ButtonDecrement.showSkeleton()
+        self.ButtonIncrement.showSkeleton()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 3,execute: {
+            self.setDetails()
+        })
+        
+        
         print("Whole Array",wholeArr)
         
     }
@@ -42,8 +67,16 @@ class DetailPageViewController: UIViewController {
         self.dismiss(animated: false)
     }
     func setDetails(){
+        self.LabelPrice.hideSkeleton()
+        self.LabelDescription.hideSkeleton()
+        self.LabelNameProduct.hideSkeleton()
+        self.CollectionViewProduct.hideSkeleton()
+        self.LabelQuantity.hideSkeleton()
+        self.ButtonDecrement.hideSkeleton()
+        self.ButtonIncrement.hideSkeleton()
+        self.ButtonAddToCart.hideSkeleton()
         LabelproductName.text = wholeArr?.name
-        
+        LabelQuantity.text = String(01)
       //  LabelDescription.text = wholeArr?.description
         self.imageArr = (wholeArr?.image)! 
         self.LabelNameProduct.text = wholeArr?.name
@@ -61,7 +94,8 @@ class DetailPageViewController: UIViewController {
             ProductImagePageControl.numberOfPages = imageArr.count
             ProductImagePageControl.currentPage = 0
         }
-        
+        self.CollectionViewProduct.reloadData()
+       
     }
     
 
@@ -144,12 +178,18 @@ class DetailPageViewController: UIViewController {
     
 }
 
-extension DetailPageViewController:UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+extension DetailPageViewController:SkeletonCollectionViewDelegate,SkeletonCollectionViewDataSource,UICollectionViewDelegateFlowLayout{
+    func collectionSkeletonView(_ skeletonView: UICollectionView, cellIdentifierForItemAt indexPath: IndexPath) -> SkeletonView.ReusableCellIdentifier {
+        return "productCell"
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         print("imageArr count" ,imageArr.count)
         return imageArr.count
     }
-    
+    func collectionSkeletonView(_ skeletonView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
         let cell = CollectionViewProduct.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)

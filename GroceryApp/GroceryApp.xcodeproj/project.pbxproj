@@ -415,6 +415,7 @@
 				DEVELOPMENT_TEAM = ZTQC6B5S6Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GroceryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGrozery;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -445,6 +446,7 @@
 				DEVELOPMENT_TEAM = ZTQC6B5S6Z;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = GroceryApp/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MyGrozery;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
