@@ -12,3 +12,5 @@ let kForFileManagerPath = "This is key for file manager path"
 var dbObject = DataBaseFile()
 
 let kForaddToCart = "this is key for add to cart"
+
+var arrayOfDatas = [ProductModel]()

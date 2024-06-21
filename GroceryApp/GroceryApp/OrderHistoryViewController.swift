@@ -26,8 +26,6 @@ class OrderHistoryViewController: UIViewController {
         
         
     }
-   
-
 }
 
 extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
@@ -36,7 +34,6 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
         
         let cell = OrderHistoryTableView.dequeueReusableCell(withIdentifier: "orderhistorycell", for: indexPath)
         let orderLabel = cell.viewWithTag(400) as! UILabel
@@ -48,7 +45,6 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
 //        dateLabel.text = order["date_of_order"]
 //        rupeeLabel.text = order["total_price"]
 //        noOfItem.text = order["no_of_products"]
-        
         cell.selectionStyle = .none
         orderLabel.text =  "Order \(String(describing: order["id"] ?? ""))"
                 dateLabel.text = String(describing: order["date_of_order"] ?? "")
@@ -57,10 +53,7 @@ extension OrderHistoryViewController:UITableViewDelegate,UITableViewDataSource{
         return cell
         
         
-
-        
     }
-    
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100.0

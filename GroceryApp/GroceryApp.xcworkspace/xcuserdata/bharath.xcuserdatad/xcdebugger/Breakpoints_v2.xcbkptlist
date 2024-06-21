@@ -7,113 +7,176 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "922AEBD8-8E52-44ED-A734-FE4622AB1E28"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroceryApp/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "102"
-            endingLineNumber = "102"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "751EC454-92D4-4F11-9E7D-99C358BF5D38"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroceryApp/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "103"
-            endingLineNumber = "103"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2CA35F48-DC12-4DED-B4BC-F730C8B23DE1"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroceryApp/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
-            landmarkName = "textField(_:shouldChangeCharactersIn:replacementString:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "187E4D71-5659-4BE4-878B-E3F8401DE54E"
+            uuid = "F5F1606D-04E4-4F45-A673-9AB8F18295F6"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "GroceryApp/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "223"
-            endingLineNumber = "223"
-            landmarkName = "BackButton(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "A878EEFB-53BF-4E5F-AB69-794AF867336A"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "GroceryApp/ViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "224"
-            endingLineNumber = "224"
-            landmarkName = "BackButton(_:)"
+            startingLineNumber = "475"
+            endingLineNumber = "475"
+            landmarkName = "selectedCell(_:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "A878EEFB-53BF-4E5F-AB69-794AF867336A - de7edad85f650d76"
+                  uuid = "F5F1606D-04E4-4F45-A673-9AB8F18295F6 - a2ee6b0b02ff5114"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GroceryApp.ViewController.BackButton(Any) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GroceryApp.ViewController.selectedCell(Swift.Int) -&gt; ()"
                   moduleName = "GroceryApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "224"
-                  endingLineNumber = "224"
-                  offsetFromSymbolStart = "725">
+                  startingLineNumber = "474"
+                  endingLineNumber = "474"
+                  offsetFromSymbolStart = "29">
                </Location>
                <Location
-                  uuid = "A878EEFB-53BF-4E5F-AB69-794AF867336A - de7edad85f650d57"
+                  uuid = "F5F1606D-04E4-4F45-A673-9AB8F18295F6 - a2ee6b0b02ff5114"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "GroceryApp.ViewController.BackButton(Any) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in GroceryApp.ViewController.selectedCell(Swift.Int) -&gt; ()"
                   moduleName = "GroceryApp"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "225"
-                  endingLineNumber = "225"
-                  offsetFromSymbolStart = "725">
+                  startingLineNumber = "474"
+                  endingLineNumber = "474"
+                  offsetFromSymbolStart = "24">
                </Location>
             </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "F3ED8143-7D4A-4C38-B025-899A1B9901A4"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroceryApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "481"
+            endingLineNumber = "481"
+            landmarkName = "sideMenuState(expanded:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "F3ED8143-7D4A-4C38-B025-899A1B9901A4 - 620308585d8fd044"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in GroceryApp.ViewController.sideMenuState(expanded: Swift.Bool) -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "480"
+                  endingLineNumber = "480"
+                  offsetFromSymbolStart = "37">
+               </Location>
+               <Location
+                  uuid = "F3ED8143-7D4A-4C38-B025-899A1B9901A4 - 4beeb6dbca7ba72"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "GroceryApp.ViewController.sideMenuState(expanded: Swift.Bool) -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "480"
+                  endingLineNumber = "480"
+                  offsetFromSymbolStart = "89">
+               </Location>
+               <Location
+                  uuid = "F3ED8143-7D4A-4C38-B025-899A1B9901A4 - 620308585d8fd065"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Bool) -&gt; () in GroceryApp.ViewController.sideMenuState(expanded: Swift.Bool) -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "481"
+                  endingLineNumber = "481"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "26614FAC-E5AA-4717-A85E-1E983CE7133A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroceryApp/ViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
+            landmarkName = "sideMenuState(expanded:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "26614FAC-E5AA-4717-A85E-1E983CE7133A - 121195527034bf05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Bool) -&gt; () in GroceryApp.ViewController.sideMenuState(expanded: Swift.Bool) -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "487"
+                  endingLineNumber = "487"
+                  offsetFromSymbolStart = "65">
+               </Location>
+               <Location
+                  uuid = "26614FAC-E5AA-4717-A85E-1E983CE7133A - 121195527034bf05"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #3 (Swift.Bool) -&gt; () in GroceryApp.ViewController.sideMenuState(expanded: Swift.Bool) -&gt; ()"
+                  moduleName = "GroceryApp"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/bharath/Desktop/WholeProjects/GroceryApp/GroceryApp/ViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "487"
+                  endingLineNumber = "487"
+                  offsetFromSymbolStart = "37">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "813A0737-A59B-497C-B4E0-083C81A02BBC"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "GroceryApp/SideMenuViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "ButtonBack(_:)"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

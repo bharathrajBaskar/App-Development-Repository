@@ -158,6 +158,10 @@ extension CartViewController:UITableViewDelegate,UITableViewDataSource{
         return 110.0
     }
     
+//    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCell.EditingStyle {
+//        <#code#>
+//    }
+    
     @objc func decrementAction(sender:UIButton){
       //  if let tag = sender.imageView?.tag {
           //  let indexp = IndexPath(row: tag, section: 0)
@@ -172,6 +176,7 @@ extension CartViewController:UITableViewDelegate,UITableViewDataSource{
 //                  print("Decrement button tapped at row: \(rowIndex)")
 //
 //              }
+        
         
         let rowIndex = sender.imageView?.tag
         if var quantity = Int(arrayOfDictionary[rowIndex!]["quantity"] ?? "1"), quantity > 1 {

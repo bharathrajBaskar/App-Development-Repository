@@ -21,6 +21,7 @@ class DetailPageViewController: UIViewController {
     @IBOutlet weak var CollectionViewProduct: UICollectionView!
     @IBOutlet weak var LabelproductName: UILabel!
  //   var ArrayImage = [ProductModel]()
+    private var cache = NSCache<NSNumber,UIImage>()
     var wholeArr:ProductModel?
     var imageArr:[String] = []
     var currentpage:Int = 0
@@ -57,7 +58,6 @@ class DetailPageViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now() + 3,execute: {
             self.setDetails()
         })
-        
         
         print("Whole Array",wholeArr)
         
@@ -172,9 +172,7 @@ class DetailPageViewController: UIViewController {
         present(alertController,animated: true,completion: nil)
         
     }
- 
-   
-    
+  
     
 }
 
@@ -192,14 +190,27 @@ extension DetailPageViewController:SkeletonCollectionViewDelegate,SkeletonCollec
     }
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         
-        let cell = CollectionViewProduct.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)
-        let imageView = cell.viewWithTag(200) as! UIImageView
+//        let cell = CollectionViewProduct.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)
+//        let imageView = cell.viewWithTag(200) as! UIImageView
      
-//        let imageArr = wholeArr?.image
-//        print("image array",imageArr!)
-        let imageUrl = imageArr[indexPath.row]
+
+//        let imageUrl = imageArr[indexPath.row]
+//        if let url = URL(string: imageUrl){
+//            downloadImage(from: url, imageviewMain: imageView,nsint: NSNumber(value: indexPath.item))
+//        }
+      //  return cell
+        let cell = CollectionViewProduct.dequeueReusableCell(withReuseIdentifier: "productCell", for: indexPath)
+        guard let imageView = cell.viewWithTag(200) as? UIImageView else{
+            return cell
+        }
+    
+        let imageUrl = imageArr[indexPath.item]
         if let url = URL(string: imageUrl){
-            downloadImage(from: url, imageviewMain: imageView)
+            ImagecacheSetup.shared.loadImage(url: imageUrl){
+                image in
+                imageView.image = image
+                imageView.contentMode = .scaleAspectFit
+            }
         }
         return cell
         
@@ -207,7 +218,7 @@ extension DetailPageViewController:SkeletonCollectionViewDelegate,SkeletonCollec
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         ProductImagePageControl.currentPage = indexPath.row
     }
-    func downloadImage(from url:URL,imageviewMain : UIImageView){
+    func downloadImage(from url:URL,imageviewMain : UIImageView,nsint:NSNumber){
         print("Download started ")
         getData(from: url){data,response,error in
             guard let data = data,error == nil else{return}
@@ -216,6 +227,7 @@ extension DetailPageViewController:SkeletonCollectionViewDelegate,SkeletonCollec
             DispatchQueue.main.async {
                 [weak self] in
                 imageviewMain.image = UIImage(data: data)
+                self?.cache.setObject(imageviewMain.image!, forKey: nsint)
                 imageviewMain.contentMode = .scaleAspectFit
             }
             

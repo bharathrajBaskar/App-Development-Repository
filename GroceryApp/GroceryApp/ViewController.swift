@@ -6,24 +6,27 @@
 //
 
 import UIKit
-import SDWebImage
-import SkeletonView
-class ViewController: UIViewController,UITextFieldDelegate {
 
-    @IBOutlet weak var ViewHiddenInitial: UIView!
+import SkeletonView
+class ViewController: UIViewController,UITextFieldDelegate{
+    //MARK: this is Outlets
     
+    @IBOutlet weak var ViewHiddenInitial: UIView!
     @IBOutlet weak var TextFieldSearch: UITextField!
     @IBOutlet weak var ViewShownInitial: UIView!
     @IBOutlet weak var CollectionViewmain: UICollectionView!
+    @IBOutlet weak var MainView: UIView!
+    @IBOutlet weak var TableViewHidden: UIView!
+    @IBOutlet weak var LabelTitle: UILabel!
+    
+    
+    //MARK: this is Local variables
+
+    let spacing:CGFloat = 16.0
     var initialBool:Bool = true
     var sideBar:UIView!
     var TableView:UITableView!
     var isSideBarOpen:Bool = false
-    @IBOutlet weak var MainView: UIView!
-    @IBOutlet weak var TableViewHidden: UIView!
-    
-    let spacing:CGFloat = 16.0
-    @IBOutlet weak var LabelTitle: UILabel!
     var arrData:[String] = []
     var arr:[UIImage]! = []
     var LabelMenu:UILabel!
@@ -37,11 +40,30 @@ class ViewController: UIViewController,UITextFieldDelegate {
     var arrayOfDictionaryApi:[[String:String]] = []
     var detailModel = [ProductModel]()
     var tempModel = [ProductModel]()
+   
+    
+    //MARK: this is cache
+    private let cache = NSCache<NSNumber,UIImage>()
+    private let utilityQueue = DispatchQueue.global(qos: .utility )
+    
+    
+    //MARK: this is Side menu
+    var sideMenuController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController") as! SideMenuViewController
+    var sideMenuwidth:CGFloat = 260
+    var paddingForRotation:CGFloat =  150
+    var isExpanded:Bool = false
+    var sideMenuShadowView:UIView!
+    var draggingIsEnabled:Bool = false
+    var panBaseLocation:CGFloat = 0.0
+    
+    var sideMenuTrailingConstraint: NSLayoutConstraint!
+    var revealSideMenuOnTop: Bool = true
     
     override func viewDidLoad() {
      
         super.viewDidLoad()
         TextFieldSearch.delegate = self
+        
         
         arrData = ["Home","Cart","Language","Logout"]
         arr = [UIImage(named: "Home")!,UIImage(named: "Cart")!,UIImage(named: "Tamil")!,UIImage(named: "Logout")!]
@@ -79,12 +101,36 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
         self.CollectionViewmain.showAnimatedGradientSkeleton(usingGradient: .init(baseColor: .lightGray.withAlphaComponent(0.6)), animation: nil, transition: .crossDissolve(0.25))
         DispatchQueue.main.asyncAfter(deadline: .now() + 3, execute: {
-            self.apiCall(link: "https://mocki.io/v1/4594154b-599b-4ce2-bce8-d7212c82604a")
+            self.apiCall(link: "https://mocki.io/v1/d5ed8298-03ad-4536-a6fa-8a4d57578b2c")
             //self.CollectionViewmain.reloadData()
           
         })
      
         
+        
+        
+        
+        self.view.addSubview(sideMenuController.view)
+        
+        self.sideMenuController.didMove(toParent: self)
+        
+        self.sideMenuController.view.translatesAutoresizingMaskIntoConstraints = false
+        if self.revealSideMenuOnTop {
+            self.sideMenuTrailingConstraint = self.sideMenuController.view.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -self.sideMenuwidth - self.paddingForRotation)
+            self.sideMenuTrailingConstraint.isActive = true
+        }
+        
+        NSLayoutConstraint.activate([
+            self.sideMenuController.view.widthAnchor.constraint(equalToConstant: self.sideMenuwidth),
+            self.sideMenuController.view.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            self.sideMenuController.view.topAnchor.constraint(equalTo: view.topAnchor)
+        ])
+        
+        self.sideMenuShadowView = UIView(frame: self.view.bounds)
+        self.sideMenuShadowView.autoresizingMask = [.flexibleWidth,.flexibleHeight]
+        self.sideMenuShadowView.backgroundColor = .black.withAlphaComponent(0.0)
+//        self.sideMenuShadowView.alpha
+        NotificationCenter.default.addObserver(self, selector: #selector(UpdateToSideMenuAction), name: NSNotification.Name(kNotificationForSideMenuExpanded), object: nil)
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         TextFieldSearch.resignFirstResponder()
@@ -122,15 +168,16 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
 
     
-    func downloadImage(from url: URL,imageViewMain:UIImageView) {
+    func downloadImage(from url: URL,imageViewMain:UIImageView,int:NSNumber) {
         print("Download Started")
         getData(from: url) { data, response, error in
             guard let data = data, error == nil else { return }
             print(response?.suggestedFilename ?? url.lastPathComponent)
             print("Download Finished")
-
+           // cache.setObject(data, forKey: int)
             DispatchQueue.main.async() { [weak self] in
                imageViewMain.image = UIImage(data: data)
+                self!.cache.setObject(imageViewMain.image!, forKey: int)
                 imageViewMain.contentMode = .scaleAspectFit
             }
         }
@@ -151,12 +198,13 @@ class ViewController: UIViewController,UITextFieldDelegate {
                     print("Response Model",responseModel)
                     self.detailModel = responseModel
                     self.tempModel = responseModel
+                    arrayOfDatas = responseModel
                     DispatchQueue.main.async {
                         self.CollectionViewmain.stopSkeletonAnimation()
                         
                        self.CollectionViewmain.hideSkeleton(reloadDataAfter: true, transition: .crossDissolve(0.25))
                         self.CollectionViewmain.reloadData()
-                        self.CollectionViewmain.reloadData()
+                        //self.CollectionViewmain.reloadData()
                     }
                     
                 }
@@ -196,9 +244,16 @@ class ViewController: UIViewController,UITextFieldDelegate {
 
     
     @IBAction func HamburgerMenuClicked(_ sender: Any) {
-        toggleSideBar()
+    //  toggleSideBar()
+//        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "TempTableViewController") as! TempTableViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc, animated: false)
         
-    }
+//        let vc =  UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "SideMenuViewController" ) as! SideMenuViewController
+//        vc.modalPresentationStyle = .fullScreen
+//        self.present(vc,animated: false)
+        self.sideMenuState(expanded: self.isExpanded ? false : true)
+     }
     
     
     @IBAction func SearchButtonClicked(_ sender: Any) {
@@ -206,7 +261,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         if initialBool
         {
             print("ViewShownInitial",ViewShownInitial.isHidden)
- //           ViewShownInitial.isHidden = true
+ // ViewShownInitial.isHidden = true
             print("ViewShownInitial",ViewShownInitial.isHidden)
             print("ViewHiddenInitial",ViewHiddenInitial.isHidden)
             TableViewHidden.isHidden = false
@@ -303,26 +358,83 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
 //
     
     
+    
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = CollectionViewmain.dequeueReusableCell(withReuseIdentifier: "CellMain", for: indexPath)
-        if let imageView = cell.viewWithTag(100) as? UIImageView,
-           let productName = cell.viewWithTag(101) as? UILabel {
-            let product = detailModel[indexPath.item]
-            print("type of",type(of: product))
-            let imgurl = URL(string: product.image!.first!)
-            //cell.layer.borderColor = UIColor.black.cgColor
-            cell.layer.borderWidth = 0.6
-               cell.layer.shadowColor = UIColor.black.cgColor
-            //   cell.layer.shadowOpacity = 0.5
-               cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
-               cell.layer.shadowRadius = 4.0
-               cell.layer.masksToBounds = false
-            downloadImage(from: imgurl!, imageViewMain: imageView)
-            productName.text = product.name
-
+//        if let imageView = cell.viewWithTag(100) as? UIImageView,
+//           let productName = cell.viewWithTag(101) as? UILabel {
+//            let product = detailModel[indexPath.item]
+//            print("type of",type(of: product))
+//            let imgurl = URL(string: product.image!.first!)
+//            //cell.layer.borderColor = UIColor.black.cgColor
+//            cell.layer.borderWidth = 0.6
+//               cell.layer.shadowColor = UIColor.black.cgColor
+//            //   cell.layer.shadowOpacity = 0.5
+//               cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//               cell.layer.shadowRadius = 4.0
+//               cell.layer.masksToBounds = false
+//
+//            downloadImage(from: imgurl!, imageViewMain: imageView)
+//            productName.text = product.name
+//
+//        }
+//        return cell
+        
+        guard let imageView = cell.viewWithTag(100) as? UIImageView,let productName = cell.viewWithTag(101) as? UILabel else {
+            return cell
         }
+//        let product = detailModel[indexPath.item]
+//        cell.layer.borderWidth = 0.6
+//           cell.layer.shadowColor = UIColor.black.cgColor
+//           cell.layer.shadowOffset = CGSize(width: 2.0, height: 2.0)
+//           cell.layer.shadowRadius = 4.0
+//           cell.layer.masksToBounds = false
+//        let itemNumber = NSNumber(value: indexPath.item)
+//        let imageUrl = URL(string: (product.image?.first)!)
+//        productName.text = product.name
+//        if let catchImage = self.cache.object(forKey: itemNumber){
+//            imageView.image = catchImage
+//        }
+//
+//        return cell
+        
+        let product = detailModel[indexPath.item]
+        productName.text = product.name
+        if let imageUrl = product.image?.first{
+            ImagecacheSetup.shared.loadImage(url: imageUrl){
+                image in imageView.image = image
+            }
+        }
+        
         return cell
+        
+        
     }
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//
+//        if detailModel.count > 0 {
+//            let cell = CollectionViewmain.dequeueReusableCell(withReuseIdentifier: "CellMain", for: indexPath)
+//            guard let imageView = cell.viewWithTag(100) as? UIImageView,let productName = cell.viewWithTag(101) as? UILabel else {
+//                return
+//            }
+//
+//            let itemNumber = NSNumber(value: indexPath.item)
+//            print("item No",itemNumber)
+//            let product = detailModel[indexPath.item]
+//            let imageUrl = URL(string: (product.image?.first!)!)
+//            if let catchImage = self.cache.object(forKey: itemNumber){
+//
+//                imageView.image = catchImage
+//            }
+//            else{
+//                self.downloadImage(from: imageUrl!, imageViewMain: imageView, int: itemNumber)
+//            }
+//
+//        }
+//
+//
+//
+//    }
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         //return CGSize(width: self.view.frame.width / 2, height: .frame.height)
@@ -339,15 +451,6 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
         return 2
     }
     
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
-//
-//        return 4
-//    }
-//
-//    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
-//
-//        return 1
-//    }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let vc  = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "DetailPageViewController") as! DetailPageViewController
@@ -358,8 +461,6 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: false)
 
-        //        present(vc,animated: true)
-
         
     }
 }
@@ -367,3 +468,76 @@ extension ViewController :SkeletonCollectionViewDelegate,SkeletonCollectionViewD
 
 
 
+extension ViewController : SideMenuViewControllerDelegate {
+    func selectedCell(_ row: Int) {
+        print("\(row)")
+        DispatchQueue.main.async {
+            self.sideMenuState(expanded: false)
+        }
+    }
+    
+    func sideMenuState(expanded:Bool){
+        if expanded {
+            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? 0 : self.sideMenuwidth) { _ in
+                self.isExpanded = true
+            }
+            UIView.animate(withDuration: 0.5, animations: { self.sideMenuShadowView.alpha = 0.6 })
+        }
+        else{
+            self.animateSideMenu(targetPosition: self.revealSideMenuOnTop ? (-self.sideMenuwidth - self.paddingForRotation): 0) { _ in
+                self.isExpanded = false
+            }
+            UIView.animate(withDuration: 0.5, animations: { self.sideMenuShadowView.alpha = 0.0 })
+        }
+    }
+    
+    func animateSideMenu(targetPosition:CGFloat,completion:@escaping(Bool)-> Void){
+        UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1.0, initialSpringVelocity: 0, options: .layoutSubviews, animations: {
+                    if self.revealSideMenuOnTop {
+                        self.sideMenuTrailingConstraint.constant = targetPosition
+                        self.view.layoutIfNeeded()
+                    }
+                    else {
+                        self.view.subviews[1].frame.origin.x = targetPosition
+                    }
+                }, completion: completion)
+    }
+    @objc func UpdateToSideMenuAction(notifi: Notification) {// for header table side menu
+            let dict = notifi.userInfo
+            self.sideMenuState(expanded: self.isExpanded ? false : true)
+//            if dict!.count > 0 {
+//                if dict!["option"] as! String == "expense" {
+//                    DispatchQueue.main.asyncAfter(deadline: .now()+0.2, execute: {
+//                        let vc = ExpenseClaimViewController()
+//                        self.navigationController?.pushViewController(vc, animated: true)
+//                    })
+//                }
+//                else if dict!["option"] as! String == "languageNO" {
+//                    self.dismiss(animated: false)
+//                }
+//                else if dict!["option"] as! String == "languageEN" {
+//                    self.dismiss(animated: false)
+//                }
+//                else if dict!["option"] as! String == "timeTracker" {
+//                    let vc = TimeTrackerViewController()
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//                else if dict!["option"] as! String == "payslip" {
+//                    self.view.makeToast("\(GlobalLanguageDictionary.object(forKey: "commingSoon") as AnyObject)")
+//                    ZerpLabsGeneral.instance.alertActionCommon(view: self, title: "\(GlobalLanguageDictionary.object(forKey: "commingSoon") as AnyObject)", message: "")
+//                }
+//                else if dict!["option"] as! String == "bank" {
+//                    self.view.makeToast("\(GlobalLanguageDictionary.object(forKey: "commingSoon") as AnyObject)")
+//                    ZerpLabsGeneral.instance.alertActionCommon(view: self, title: "\(GlobalLanguageDictionary.object(forKey: "commingSoon") as AnyObject)", message: "")
+//                }
+//                else if dict!["option"] as! String == "reports" {
+//                    let vc = ReportsListViewController()
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//                else if dict!["option"] as! String == "sale" {
+//                    let vc = SaleBaseViewController()
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//            }
+        }
+}
